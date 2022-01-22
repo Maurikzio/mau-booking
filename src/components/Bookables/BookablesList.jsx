@@ -4,10 +4,10 @@ const { bookables } = require("../../static.json");
 
 const BookablesList = () => {
   const [bookableIndex, setBookableIndex] = useState(1);
+  const [group, setGroup] = useState("Kit");
 
-  const group = "Rooms";
-  
   const bookablesInGroup = bookables.filter(b => b.group === group);
+  const groups = [...new Set(bookables.map(b => b.group))];
 
   const changeBookable = (selectedIndex) => {
     setBookableIndex(selectedIndex)
@@ -20,6 +20,13 @@ const BookablesList = () => {
 
   return (
     <div>
+      <select 
+        name="groups" 
+        id="" 
+        onChange={(e) => setGroup(e.target.value)}
+      >
+        {groups.map(g => <option value={g} key={g}>{g}</option>)}
+      </select>
       <ul className="bookables items-list-nav">
         {bookablesInGroup.map((b, i) => (
           <li key={b.id} className={i === bookableIndex ? "selected" : null}>
