@@ -1,7 +1,10 @@
-import React from 'react';
 
 const BookablesPages = () => {
-  return <div>BookablesPages</div>;
+  return (
+    <main className="bookables-page">
+      <p>Bookables</p>
+    </main>
+  )
 };
 
 export default BookablesPages;
