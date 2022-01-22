@@ -1,8 +1,9 @@
+import BookablesList from "./BookablesList";
 
 const BookablesPages = () => {
   return (
     <main className="bookables-page">
-      <p>Bookables</p>
+      <BookablesList/>
     </main>
   )
 };
